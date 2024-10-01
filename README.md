@@ -1,13 +1,17 @@
 # Websocket-Sample
+
 client example
+
 C# using WebSocketSharp
 
 
 
 internal class Program
 {
+
     static private NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
     static WebSocket ws;
+    
     static void Main(string[] args)
     {
         ws = new WebSocketSharp.WebSocket("ws://localhost:8080/TestWS");
