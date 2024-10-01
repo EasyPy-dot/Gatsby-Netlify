@@ -5,8 +5,8 @@ client example
 C# using WebSocketSharp
 
 
-internal class Program
-{
+ internal class Program
+ {
 
     static private NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
     static WebSocket ws;
