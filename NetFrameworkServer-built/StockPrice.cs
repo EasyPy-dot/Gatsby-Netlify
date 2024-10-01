@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NetFrameworkServer_built
+{
+    internal class StockPrice : IEquatable<StockPrice>
+    {
+        public StockPrice(string symbol, string price)
+        {
+            Symbol = symbol;
+            Price = price;
+        }
+
+        public string Symbol { get; }
+        //public decimal Price { get; set; }
+        public string Price { get; set; }
+
+        public bool Equals(StockPrice other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return string.Equals(Symbol, other.Symbol, StringComparison.OrdinalIgnoreCase);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((StockPrice)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return (Symbol != null ? StringComparer.OrdinalIgnoreCase.GetHashCode(Symbol) : 0);
+        }
+
+        public static bool operator ==(StockPrice left, StockPrice right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(StockPrice left, StockPrice right)
+        {
+            return !Equals(left, right);
+        }
+    }
+}
