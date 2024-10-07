@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "NetCoreServer": {
+        "commandName": "Project",
+        "commandLineArgs": "--urls=http://localhost:5002",
+        "launchBrowser": true,
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+    }
+  }
+}
