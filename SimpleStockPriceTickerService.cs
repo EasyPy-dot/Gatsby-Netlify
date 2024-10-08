@@ -228,7 +228,6 @@ namespace NetCoreServer
         }
 
         public string Symbol { get; }
-        //public decimal Price { get; set; }
         public string Price { get; set; }
 
         public bool Equals(StockPrice other)
